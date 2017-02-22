@@ -28,8 +28,13 @@
           </div>
 
           <div class="form-group">
-            <%= product.label :categories %>
-            <%= product.collection_check_boxes :category_ids, Category.all, :id, :name %>
+            <%= product.label :categories %><br />
+            <%= product.collection_check_boxes :category_ids, Category.all, :id, :name do |b| %>
+              <div class="collection-check-box">
+                <%= b.check_box %>
+                <%= b.label %>
+              </div>
+            <% end %>
           </div>
 
           <div class="actions">
